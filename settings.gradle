@@ -1,0 +1,4 @@
+rootProject.name = 'spring-cloud-sso-oauth2-fb'
+include ':cloud-config-server',
+        ':discovery-service-registry',
+        ':fb-sso-oauthed-service'

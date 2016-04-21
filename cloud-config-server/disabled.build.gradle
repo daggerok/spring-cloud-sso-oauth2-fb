@@ -1,0 +1,17 @@
+plugins {
+  // docker, dockerTag, dockerTag<tag>, dockerPush,
+  // dockerPush<tag>, dockerPrepare, dockerClean, dockerfileZip
+  id 'com.palantir.docker' version '0.6.0'
+  // generateDockerCompose
+  id 'com.palantir.docker-compose' version '0.6.0'
+  // dockerRun, dockerStop, dockerRunStatus, dockerRemoveContainer
+  id 'com.palantir.docker-run' version '0.6.0'
+}
+
+docker {
+  name "$appGroup/$projectDir.name:$appVersion"
+  tags 'dev'//tags 'latest'
+  dockerfile 'Dockerfile'
+  //dockerfile "$projectDir.name/src/main/docker/Dockerfile"
+  //dependsOn tasks.distTar
+}
